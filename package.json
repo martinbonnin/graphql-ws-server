@@ -9,13 +9,8 @@
     "nodemon": "^1.19.4",
     "ws": "^7.4.5"
   },
-  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "start": "nodemon --exec babel-node src/index.js",
-    "start:ci": "node src/index.js",
-    "version": "node --version"
-  },
-  "version": "0.0.0"
+    "start": "nodemon --exec babel-node src/index.js"
+  }
 }
