@@ -14,16 +14,16 @@
 
     // The roots provide resolvers for each GraphQL operation
     const roots = {
-    query: {
+      query: {
         hello: () => 'Hello World!',
-    },
-    subscription: {
-        greetings: function* sayHiIn5Languages() {
-        for (const hi of ['Hi', 'Bonjour', 'Hola', 'Ciao', 'Zdravo']) {
+      },
+      subscription: {
+        greetings: async function* sayHiIn5Languages() {
+          for (const hi of ['Hi', 'Bonjour', 'Hola', 'Ciao', 'Zdravo']) {
             yield { greetings: hi };
-        }
+          }
         },
-    },
+      },
     };
 
     let port = 9090;
