@@ -7,6 +7,9 @@
     type Query {
         hello: String
     }
+    type Mutation {
+      hello: String
+    }
     type Subscription {
         greetings: String
     }
@@ -16,6 +19,9 @@
     const roots = {
       query: {
         hello: () => 'Hello World!',
+      },
+      mutation: {
+        hello: () => 'Hello Mutation!',
       },
       subscription: {
         greetings: async function* sayHiIn5Languages() {
