@@ -2,6 +2,10 @@
     import { useServer } from 'graphql-ws/lib/use/ws';
     import { buildSchema } from 'graphql';
 
+    function timeout(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     // Construct a schema, using GraphQL schema language
     const schema = buildSchema(`
     type Query {
@@ -26,6 +30,7 @@
       subscription: {
         greetings: async function* sayHiIn5Languages() {
           for (const hi of ['Hi', 'Bonjour', 'Hola', 'Ciao', 'Zdravo']) {
+            await timeout(15000);
             yield { greetings: hi };
           }
         },
